@@ -1,5 +1,5 @@
 # DNA
-This repository provides the evaluation code of our paper: ***Neural Architecture Search by Block-wisely Distilling Architecture Knowledge***.
+This repository provides the evaluation code of our paper: ***Blockwisely Supervised Neural Architecture Search with Knowledge Distillation***.
 
 ## Our Trained Models 
 - Our searched models have been trained from scratch and can be found in: https://drive.google.com/drive/folders/1Oqc2gq8YysrJq2i6RmPMLKqheGfB9fWH. 
