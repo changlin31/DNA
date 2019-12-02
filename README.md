@@ -1,15 +1,15 @@
 # DNA
-This repository provides the evaluation code of our submitted paper: ***Neural Architecture Search by Block-wisely Distilling Architecture Knowledge***.
+This repository provides the evaluation code of our paper: ***Neural Architecture Search by Block-wisely Distilling Architecture Knowledge***.
 
 ## Our Trained Models 
-- Our searched models have been trained from scratch and can be found in the supplementary material of the paper. 
+- Our searched models have been trained from scratch and can be found in: [https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.shvalprep.sh]. 
 
 - Here is a summary of our searched models:
 
     |    Model    |  FLOPs    |   Params |   Acc@1   |   Acc@5   |
     |:---------:|:---------:|:---------:|:---------:|:---------:|
-    | DNA-a    |   348M     |	4.2M    |      76.9%    |       93.0%   |
-    | DNA-b    |   394M     |	4.9M    |      77.4%    |       93.4%   |
+    | DNA-a    |   348M     |	4.2M    |      77.1%    |       93.3%   |
+    | DNA-b    |   394M     |	4.9M    |      77.5%    |       93.3%   |
     | DNA-c    |   466M     |	5.3M    |      77.8%    |       93.7%   |
     | DNA-d    |   611M     |	6.4M    |      78.4%    |       94.0%   |
 
