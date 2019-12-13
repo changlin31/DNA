@@ -258,11 +258,11 @@ def DNA_b(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
 
 def DNA_c(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
     model_arch = [['ds_r1_k3_s1_c16_se0.25'],
-                  ['ir_r1_k7_s2_e6_c24_se0.25', 'ir_r1_k5_s1_e6_c24_se0.25', 'ir_r1_k7_s1_e6_c24_se0.25'],
-                  ['ir_r2_k7_s2_e6_c40_se0.25', 'ir_r1_k5_s1_e6_c40_se0.25', 'ir_r1_k7_s1_e6_c40_se0.25'],
-                  ['ir_r1_k7_s2_e6_c80_se0.25', 'ir_r2_k5_s1_e6_c80_se0.25', 'ir_r1_k7_s1_e6_c80_se0.25'],
-                  ['ir_r1_k7_s1_e6_c96_se0.25', 'ir_r1_k5_s1_e6_c96_se0.25', 'ir_r2_k7_s1_e6_c96_se0.25'],
-                  ['ir_r1_k7_s2_e6_c192_se0.25', 'ir_r3_k5_s1_e3_c192_se0.25', 'ir_r1_k5_s1_e6_c192_se0.25'],
+                  ['ir_r1_k5_s2_e6_c24_se0.25', 'ir_r1_k3_s1_e6_c24_se0.25'],
+                  ['ir_r2_k5_s2_e6_c40_se0.25', 'ir_r1_k3_s1_e6_c40_se0.25', 'ir_r1_k5_s1_e6_c40_se0.25'],
+                  ['ir_r1_k5_s2_e6_c80_se0.25', 'ir_r1_k3_s1_e6_c80_se0.25', 'ir_r2_k5_s1_e6_c80_se0.25'],
+                  ['ir_r1_k3_s1_e6_c112_se0.25', 'ir_r2_k5_s1_e6_c112_se0.25', 'ir_r1_k5_s1_e3_c112_se0.25'],
+                  ['ir_r1_k5_s2_e6_c192_se0.25', 'ir_r1_k5_s1_e3_c192_se0.25', 'ir_r2_k5_s1_e6_c192_se0.25'],
                   ['ir_r1_k3_s1_e6_c320_se0.25']]
 
     default_cfg = _cfg(url='')
