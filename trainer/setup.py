@@ -12,14 +12,14 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 exec(open('timm/version.py').read())
 setup(
-    name='timm',
+    name='dnaTrainer',
     version=__version__,
-    description='(Unofficial) PyTorch Image Models',
+    description='Code for training DNA(a-d) and efficient-net model ',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/rwightman/pytorch-image-models',
-    author='Ross Wightman',
-    author_email='hello@rwightman.com',
+    url='https://github.com/jiefengpeng/DNA',
+    author='Liuchun Yuan &  Jiefeng peng',
+    author_email='ylc0003@gmail.com',
     classifiers=[
         # How mature is this project? Common values are
         #   3 - Alpha
@@ -39,7 +39,7 @@ setup(
     ],
 
     # Note that this is a string of words separated by whitespace, not a list.
-    keywords='pytorch pretrained models efficientnet mobilenetv3 mnasnet',
+    keywords='pytorch pretrained models efficientnet dnanet',
     packages=find_packages(exclude=['convert']),
     install_requires=['torch >= 1.0', 'torchvision'],
     python_requires='>=3.6',
