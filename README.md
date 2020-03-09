@@ -21,8 +21,15 @@ This repository provides the evaluation code of our paper: [***Blockwisely Super
 - Download the ImageNet dataset and move validation images to labeled subfolders
     - To do this, you can use the following script: [https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.shvalprep.sh](https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh)
 	- Only the validation set is needed in the evaluation process.
+	
+### 2. Train our models
 
-### 2. Evaluate our models
+**The Training Module is simplified from the repo: [pytorch-image-models](https://github.com/rwightman/pytorch-image-models)**
+
+- Modify the `run_example.sh`: change data path and hyper-params  according to your requirements
+-  `./run_example.sh`
+
+### 3. Evaluate our models
 
 - You can evaluate our models with the following command:\
     ```python validate.py PATH/TO/ImageNet/validation --model DNA_a --checkpoint PATH/TO/model.pth.tar```
