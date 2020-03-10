@@ -38,4 +38,4 @@ This repository provides the evaluation code of our paper: [***Blockwisely Super
     - ```--checkpoint``` : Suggest the path of your downloaded checkpoint here.
 	
 ## TODO
-Training and Searching code will be released in the future.
+Searching code will be released in the future.
