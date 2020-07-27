@@ -1,0 +1,7 @@
+dataset: imagenet  # Name of pretrain dataset
+datadir: /data/imagenet  # Root path to pretrain dataset
+img_size: 224
+interpolation: ''
+mean: null
+std: null
+num_classes: 1000

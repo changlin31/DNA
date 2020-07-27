@@ -1,0 +1,87 @@
+# ------ Model parameters ------
+resume: '' # resume checkpoint path e.g. 'output/adam-step-ep25-lr0.002-bs64-20191105-144820/checkpoint-4-25.pth.tar'
+model_pool: '' # model pool path NOTE: make sure same stage with resume
+# -- Model Exponential Moving Average --
+model_ema: false  # Enable tracking moving average of model weights
+model_ema_decay: 0.9998  # decay factor for model weights moving average (default: 0.9998)
+model_ema_force_cpu: false  # Force ema to be tracked on CPU, rank=0 node only. Disables EMA validation.
+
+# ----- Dataset parameters -----
+color_jitter: 0.4  # Color jitter factor (default: 0.4)
+reprob: 0.5  # Random erase prob (default: 0.)
+remode: pixel  # Random erase mode (default: "const")
+mixup: 0.  # mixup alpha, mixup enabled if > 0. (default: 0.)
+mixup_off_epoch: 0  # turn off mixup after this epoch, disabled if 0 (default: 0)
+smoothing: 0.1  # label smoothing (default: 0.1)
+
+# ----- Misc -----
+prefetcher: true  # enable fast prefetcher
+amp: false  # use NVIDIA amp for mixed precision training
+output: ''  # path to output folder (default: none)
+eval_metric: prec1  # Best metric (default: "prec1")
+log_interval: 50  # how many batches to wait before logging training status
+num_gpu: 1  # Number of GPUs to use
+recovery_interval: 0  # how many batches to wait before writing recovery checkpoint
+save_images: false  # save images of input bathes every log interval for debugging
+seed: 42  # random seed (default: 42)
+sync_bn: false  # enabling apex sync BN. (default: false) # NOTE: DO NOT USE WHEN TRAINING!! MAY CAUSE DEAD LOCK!!
+workers: 4  # how many data processes to use (default: 4)
+
+# ----- Hyper-parameters -----
+batch_size: 64  # input batch size for training (default: 64)
+# -- optimizer --
+opt: adam  # Optimizer (default: "sgd")
+opt_eps: 1.0e-08  # Optimizer Epsilon (default: 1e-8)
+momentum: 0.9  # SGD momentum (default: 0.9)
+weight_decay: 0.0001  # weight decay (default: 0.0001)
+# -- lr scheduler --
+sched: step  # LR scheduler (default: "step")
+#lr: [0.002, 0.005, 0.01, 0.007, 0.017, 0.01]  # learning rate for each stage (default: 0.01)
+lr: [0.002, 0.005, 0.005, 0.005, 0.005, 0.002]  # learning rate for each stage (default: 0.01)
+#lr: 0.01
+warmup_lr: 0.001  # warmup learning rate (default: 0.0001)
+min_lr: 1.0e-08  # lower lr bound for cyclic schedulers that hit 0 (1e-5)
+decay_epochs: 1  # epoch interval to decay LR (default: 30)
+warmup_epochs: 0  # epochs to warmup LR, if scheduler supports (default: 5)
+cooldown_epochs: 0  # epochs to cooldown LR at min_lr, after cyclic schedule ends (default: 10)
+decay_rate: 0.9  # LR decay rate (default: 0.1)
+start_epoch: null  # manual epoch number (useful on restarts)
+start_stage: null # manual stage number (force restart at certain stage)
+
+# ------ Distill_train --------
+eval_mode: false # eval only (default false)
+train_mode: false # train only (default false)
+reset_bn_eval: true # recalibrate bn when evaluation (default true)
+
+guide_loss_fn: mse # 'mse' or 'klcos' (default mse)
+stage_num: 6 # number of stages, same as len(supernet.block_cfg)
+top_model_num: 3 # model pool size
+step_epochs: 20 # train epochs every stage
+eval_intervals: 2 # eval intervals when training
+update_frequency: 1 # set equal to num_ops when fair sample
+potential_eval_times: 20 # eval times when calculating potential
+distill_last_stage: true # true to distill the last stage, false to calculate classification CE loss in the last stage
+test_dispatch: '' # 'b0', 'b7', '', 'crsupernet'
+print_detail: true # print GRLoss and mean etc.
+
+loss_weight: [0.5, 0.5] # [feature, supervise] only work if feature and label train are both true
+save_last_feature: true
+
+guide_input: true # use teacher's feature map as input
+reset_after_stage: false # reset model weight before every stage
+reverse_train: false # true to train from last stage to first stage. NOTE: MUST set distill_last_stage TRUE!!
+feature_train: true # train to learn teacher feature using MSE loss.
+label_train: false # concat student block with teacher to calculate CE loss.
+separate_train: false # only optimize weights of current block NOTE: set false for stage 0
+
+
+
+## default settings
+#save_last_feature: true
+#
+#guide_input: true # use teacher's feature map as input
+#reset_after_stage: false # reset model weight before every stage
+#reverse_train: false # true to train from last stage to first stage. NOTE: MUST set distill_last_stage TRUE!!
+#feature_train: true # train to learn teacher feature using MSE loss.
+#label_train: false # concat student block with teacher to calculate CE loss.
+#separate_train: true # only optimize weights of current block

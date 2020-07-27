@@ -1,7 +1,6 @@
 
 import argparse
 import time
-import logging
 from datetime import datetime
 
 try:

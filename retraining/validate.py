@@ -6,8 +6,6 @@ from __future__ import print_function
 
 import argparse
 import os
-import csv
-import glob
 import time
 import logging
 import torch
@@ -60,7 +58,6 @@ def validate(args):
     args.prefetcher = True
 
     # create model
-    from model import DNA_a, DNA_b, DNA_c, DNA_d
     model = eval(args.model)()
 
     if args.checkpoint:
