@@ -35,19 +35,16 @@ def distill_train(supernet,
 
     if args.reset_bn_eval:
         reset_data = next(iter(train_loader))
-        print(reset_data[0].size())
     else:
         reset_data = None
     if model_pool is not None and args.local_rank == 0:
         logging.info('loaded model pool:\n{}'.format(model_pool))
-    print(start_epoch, start_stage)
     model_pool, skip_first_train, start_stage, start_epoch \
         = _process_startpoint(args=args,
                               supernet=supernet,
                               start_stage=start_stage,
                               start_epoch=start_epoch,
                               model_pool=model_pool)
-    print(start_epoch, start_stage)
 
     for stage in range(start_stage, args.stage_num):
         if args.guide_input:
