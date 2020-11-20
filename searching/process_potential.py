@@ -25,41 +25,29 @@ def main():
                   'MB3_7x7_se0.25',
                   ]
 
-    potential_yaml = [
+    potential_yaml = [  # path to your potential files
         ['./output/sota/adam-step-ep25-lr0.002-bs260-20191110-201108/potential-0.yaml',
-         './output/sota/adam-step-ep25-lr0.002-bs260-20191109-141527/potential-0.yaml',
-         './output/sota/adam-step-ep25-lr0.002-bs260-20191109-140501/potential-0.yaml'
          ],
         ['./output/sota/adam-step-ep25-lr0.002-bs260-20191109-135641/potential-1.yaml',
-         './output/sota/adam-step-ep25-lr0.002-bs260-20191109-145221/potential-1.yaml',
-         './output/search/adam-step-ep40-lr0.002-bs260-20191109-114241/potential-1.yaml',
          ],
         ['./output/sota/adam-step-ep25-lr0.002-bs260-20191109-135239/potential-2.yaml',
-         './output/sota/adam-step-ep25-lr0.002-bs260-20191109-150337/potential-2.yaml',
-         './output/search/adam-step-ep40-lr0.002-bs260-20191109-125448/potential-2.yaml'
          ],
         ['./output/search/adam-step-ep40-lr0.002-bs260-20191109-150954/potential-3.yaml',
-         './output/search/adam-step-ep40-lr0.002-bs260-20191109-133629/potential-3.yaml',
-         './output/search/adam-step-ep40-lr0.002-bs260-20191109-115817/potential-3.yaml'
          ],
         ['./output/search/adam-step-ep40-lr0.002-bs260-20191109-142604/potential-4.yaml',
-         './output/sota/adam-step-ep40-lr0.002-bs260-20191110-202256/potential-4.yaml',
-         './output/search/adam-step-ep40-lr0.002-bs260-20191109-134037/potential-4.yaml'
          ],
         # ['./output/search/adam-step-ep40-lr0.002-bs260-20191109-150525/potential-5.yaml']
     ]
 
     layer_cfgs = [
-        [2, 2, 2, 4, 5, 1],
-        [3, 3, 3, 4, 5, 1],
-        [3, 3, 4, 4, 5, 1]
+        [2, 4, 4, 4, 4, 1]
     ]
     block_cfgs = [
-        [24, 24, 2, 3],
+        [24, 24, 2, 2],
         [40, 40, 2, 4],
         [80, 80, 2, 4],
-        [96, 96, 1, 4],
-        [192, 192, 2, 5],
+        [112, 112, 1, 4],
+        [192, 192, 2, 4],
         [320, 320, 1, 1]
     ]
     num_op = 6

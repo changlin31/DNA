@@ -1,6 +1,13 @@
 # DNA
-This repository provides the evaluation code of our paper: [***Blockwisely Supervised Neural Architecture Search with Knowledge Distillation***](https://arxiv.org/abs/1911.13053).
+This repository provides the code of our paper: [***Blockwisely Supervised Neural Architecture Search with Knowledge Distillation***](https://arxiv.org/abs/1911.13053).
 
+<img src=https://user-images.githubusercontent.com/61453811/99777992-0d914600-2b4e-11eb-8022-d83a438de6d0.png width=90%/>
+
+Illustration of DNA. Each cell of the supernet is trained independently to mimic the behavior of the corresponding teacher block.
+
+<img src=https://user-images.githubusercontent.com/61453811/99778189-4f21f100-2b4e-11eb-8424-df182fb58962.png width=90%/>
+
+Comparison of model ranking for DNA vs. DARTS, SPOS and MnasNet under two different hyper-parameters.
 ## Our Trained Models 
 - Our searched models have been trained from scratch and can be found in: https://drive.google.com/drive/folders/1Oqc2gq8YysrJq2i6RmPMLKqheGfB9fWH. 
 
@@ -13,11 +20,13 @@ This repository provides the evaluation code of our paper: [***Blockwisely Super
     | DNA-c    |   466M     |	5.3M    |      77.8%    |       93.7%   |
     | DNA-d    |   611M     |	6.4M    |      78.4%    |       94.0%   |
 
+<img src=https://user-images.githubusercontent.com/61453811/99778983-5eee0500-2b4f-11eb-8c9f-882eb6c70eb1.png width=90%/>
+
 ## Usage
 ### 1. Requirements
 - Install PyTorch ([pytorch.org](http://pytorch.org))
 - Install third-party requirements
-	- `pip install timm==0.1.14` We use this [Pytorch-Image-Models](https://github.com/rwightman/pytorch-image-models/) codebase to validate our models. 
+	- `pip install timm==0.1.14` We use this [pytorch-image-models](https://github.com/rwightman/pytorch-image-models/) codebase to validate our models. 
 - Download the ImageNet dataset and move validation images to labeled subfolders
     - To do this, you can use the following script: [https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.shvalprep.sh](https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh)
 	- Only the validation set is needed in the evaluation process.
@@ -33,7 +42,7 @@ The code for supernet training, evaluation and searching is under `searching` di
 #### ii) Search for the best architecture under constraint.
 Our traversal search can handle a search space with 6 ops in each layer, 6 layers in each stage, 6 stages in total. A search process like this should finish in half an hour with a single cpu. To perform search over a larger search space, you can manually divide the search space or use other search algorithms such as Evolution Algorithms to process our evaluated architecture potential files.
 
-- Copy the path to architecture potential files generated in step i) to `potential_yaml` in `process_potential.py`. Modify the constraint in `process_potential.py`.
+- Copy the path of architecture potential files generated in step i) to `potential_yaml` in `process_potential.py`. Modify the constraint in `process_potential.py`.
 - `python process_potential.py`
 
 	
