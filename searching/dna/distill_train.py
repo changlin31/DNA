@@ -692,13 +692,13 @@ def _potential(supernet,
         m_d = AverageMeter()
 
     # supernet.eval()
-    for layer in supernet.module.modules():
+    for layer in supernet.modules():
         if isinstance(layer, nn.BatchNorm2d) or isinstance(layer, nn.SyncBatchNorm) or (
                 has_apex and isinstance(layer, apex.parallel.SyncBatchNorm)):
             print(layer, '\n supernet.bn.train()')
             layer.train()
     # teacher.eval()
-    for layer in teacher.module.modules():
+    for layer in teacher.modules():
         if isinstance(layer, nn.BatchNorm2d) or isinstance(layer, nn.SyncBatchNorm) or (
                 has_apex and isinstance(layer, apex.parallel.SyncBatchNorm)):
             print(layer, '\n teacher.bn.train()')
