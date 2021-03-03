@@ -336,6 +336,8 @@ def main():
                 lr_scheduler=lr_scheduler, saver=saver, output_dir=output_dir,
                 use_amp=use_amp, model_ema=model_ema)
 
+            logging.info('Epoch {}, Arch weights: {}'.format(epoch, model.module.alpha)) # ddp wrapper
+
             eval_metrics = validate(model, loader_eval, validate_loss_fn, args)
 
             if model_ema is not None and not args.model_ema_force_cpu:
@@ -440,7 +442,6 @@ def train_epoch(
                         lr=lr,
                         data_time=data_time_m))
 
-                logging.info('Arch weights: {}'.format(model.alpha))
 
                 if args.save_images and output_dir:
                     torchvision.utils.save_image(

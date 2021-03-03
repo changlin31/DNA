@@ -1,5 +1,5 @@
 
-CUDA_VISIBLE_DEVICES=0  \
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7  \
 ./dist_darts_search.sh 8 ${IMAGENET_PATH}$ \
  --model darts --epochs 90  \
  --warmup-epochs 5  --batch-size 128 \
