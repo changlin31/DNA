@@ -13,6 +13,7 @@ import torch.nn as nn
 import torch.nn.parallel
 from collections import OrderedDict
 
+from model import *
 from timm.models import create_model, apply_test_time_pool, load_checkpoint, is_model, list_models
 from timm.data import Dataset, DatasetTar, create_loader, resolve_data_config
 from timm.utils import accuracy, AverageMeter, natural_key, setup_default_logging
