@@ -44,7 +44,8 @@ Our traversal search can handle a search space with 6 ops in each layer, 6 layer
 
 - Copy the path of architecture potential files generated in step i) to `potential_yaml` in `process_potential.py`. Modify the constraint in `process_potential.py`.
 - `python process_potential.py`
-
+#### iii) Searching with multiple cells in each block.
+Please refer to the clarification from [@MohanadOdema](https://github.com/MohanadOdema) in [***this issue***](https://github.com/changlin31/DNA/issues/29#issue-1005020596).
 	
 ### 3. Retraining
 
