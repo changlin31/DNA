@@ -5,7 +5,7 @@ import math
 from copy import deepcopy
 from timm.models import *
 from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
-
+from _converts import *
 _BN_MOMENTUM_PT_DEFAULT = 0.1
 _BN_EPS_PT_DEFAULT = 1e-5
 _BN_ARGS_PT = dict(momentum=_BN_MOMENTUM_PT_DEFAULT, eps=_BN_EPS_PT_DEFAULT)
@@ -284,6 +284,305 @@ def DNA_d(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
                   ['ir_r1_k3_s1_e6_c320_se0.25']]
 
     default_cfg = _cfg(url='')
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank0(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_0) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank10(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_10) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank20(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_20) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank30(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_30) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+    
+
+def DNA_rank40(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_40) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank50(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_50) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank60(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_60) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank70(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_70) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+
+    return model
+
+
+
+def DNA_rank80(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_80) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank90(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_90) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank100(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_100) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank110(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_110) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank120(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_120) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank130(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_130) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank140(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_140) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+def DNA_rank150(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_150) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank160(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_160) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank170(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_170) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank180(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_180) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank190(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_190) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+def DNA_rank200(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_200) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+    
+
+def DNA_rank220(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_220) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
+    kwargs['drop_connect_rate'] = 0.2  # Open in train
+    model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
+        num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
+    model.default_cfg = default_cfg
+    if pretrained:
+        raise NotImplementedError
+    return model
+
+
+def DNA_rank250(pretrained=False, num_classes=1000, in_chans=3, **kwargs):
+    model_arch = converter(rank_250) 
+    default_cfg = _cfg(url='')
+    # TODO: Add Pretained model in url
     kwargs['drop_connect_rate'] = 0.2  # Open in train
     model = _gen_dna_net(channel_multiplier=1.0, depth_multiplier=1.0,
         num_classes=num_classes, in_chans=in_chans, arch_def=model_arch, **kwargs)
